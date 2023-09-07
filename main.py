@@ -1,5 +1,12 @@
-with open("books/frankenstein.txt") as f:
-    file_contents = f.read()
+def main():
+    with open("books/frankenstein.txt") as f:
+        file_contents = f.read()
+    number_words = get_num_words(file_contents)
+    print("--- Begin report of books/frankenstein.txt ---")
+    print(f"{number_words} found in the document")
+    print ()
+    generate_report(get_letter_frequencies(file_contents))
+    print("--- End report ---")
 
 def get_num_words(text):
     return len(text.split())
@@ -22,11 +29,4 @@ def generate_report(letter_frequencies):
             print(f"The '{frequency[0]}' character was found {frequency[1]} times")
 
 
-number_words = get_num_words(file_contents)
-
-
-print("--- Begin report of books/frankenstein.txt ---")
-print(f"{number_words} found in the document")
-print ("")
-generate_report(get_letter_frequencies(file_contents))
-print("--- End report ---")
+main()
