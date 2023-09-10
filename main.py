@@ -3,7 +3,7 @@ def main():
         file_contents = f.read()
     number_words = get_num_words(file_contents)
     print("--- Begin report of books/frankenstein.txt ---")
-    print(f"{number_words} found in the document")
+    print(f"{number_words} words found in the document")
     print ()
     generate_report(get_letter_frequencies(file_contents))
     print("--- End report ---")
